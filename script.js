@@ -19,7 +19,7 @@ function  onClick(){
 		},4000)
 	})
 }
-button.addEventListener(('click'),onClick.then((res)=>{
+button.addEventListener(('click',(onClick.then((res))=>{
 	alert(res);
 }).catch((res)=>{
   alert(res);
