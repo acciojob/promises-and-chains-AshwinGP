@@ -1,5 +1,5 @@
 //your JS code here. If required.
-var button=documnet.getElementById("btn");
+var button=document.getElementById("btn");
 // var name=document.getElementById("name").value;
 // var age=document.getElemenById("age").value;
 
@@ -7,6 +7,7 @@ function  onClick(){
 	return promise=new Promise((resolve,reject)=>{
 		setTimeout(()=>{
             var name=document.getElementById("name").value;
+		
             var age=document.getElemenById("age").value;
 
 			if(age>=18){
