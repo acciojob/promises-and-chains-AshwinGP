@@ -8,7 +8,7 @@ function  onClick(){
 		setTimeout(()=>{
             var name=document.getElementById("name").value;
 		
-            var age=document.getElemenById("age").value;
+            var age=document.getElementById("age").value;
 
 			if(age>=18){
 				resolve(`Welcome, ${name}. You can vote.`)
