@@ -1,20 +1,25 @@
-    document.getElementById('btn').addEventListener('click', function(event) {
-        event.preventDefault();
-        const age = document.getElementById('age').value;
-        const name = document.getElementById('name').value;
+//your JS code here. If required.
+var button=documnet.getElementById("btn");
+// var name=document.getElementById("name").value;
+// var age=document.getElemenById("age").value;
 
-        const formPromise = new Promise((resolve, reject) => {
-            setTimeout(() => {
-                if (age >= 18) {
-                    resolve(`Welcome, ${name}. You can vote.`);
-                } else {
-                    reject(`Oh sorry ${name}. You aren't old enough.`);
-                }
-            }, 4000);
-        });
-        formPromise.then((message) => {
-            alert(message);
-        }).catch((message) => {
-            alert(message);
-        });
-    });
+function  onClick(){
+	return promise=new Promise((resolve,reject)=>{
+		setTimeout(()=>{
+            var name=document.getElementById("name").value;
+            var age=document.getElemenById("age").value;
+
+			if(age>=18){
+				resolve(`Welcome, ${name}. You can vote.`)
+			}
+			else{
+				reject(`Welcome, ${age}. You can vote.`)
+			}
+		},4000)
+	})
+}
+button.addEventListener('click',onClick.then((res)=>{
+	alert(res);
+}).catch((res)=>{
+  alert(res);
+}));
