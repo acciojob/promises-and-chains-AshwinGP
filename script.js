@@ -14,12 +14,12 @@ function  onClick(){
 				resolve(`Welcome, ${name}. You can vote.`)
 			}
 			else{
-				reject(`Welcome, ${age}. You can vote.`)
+				reject(`Welcome, ${name}. You can't vote.`)
 			}
 		},4000)
 	})
 }
-button.addEventListener('click',onClick.then((res)=>{
+button.addEventListener('click',onClick().then((res)=>{
 	alert(res);
 }).catch((res)=>{
   alert(res);
