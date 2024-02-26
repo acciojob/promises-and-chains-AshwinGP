@@ -1,24 +1,25 @@
-//your JS code here. If required.
-var button=document.getElementById("btn");
-// var name=document.getElementById("name").value;
-// var age=document.getElemenById("age").value;
-
-var onclick=new Promise((resolve,reject)=>{
-		setTimeout(()=>{
-            var name=document.getElementById("name").value;
-		
-            var age=document.getElementById("age").value;
-
-			if(age>=18){
-				resolve(`Welcome, ${name}. You can vote.`)
-			}
-			else{
-				reject(`Welcome, ${name}. You aren't old enough.`)
-			}
-		},4000)
-	});
-button.addEventListener('click',onClick.then((res)=>{
-	alert(res);
-}).catch((res)=>{
-  alert(res);
-}));
+let formbutton = document.getElementById("btn");
+function promiseApi1(name , age)
+{
+ return new Promise((resolve , reject) => {
+        setTimeout(() => {
+            if(age > 18)
+            {
+                resolve(
+                    `Welcome, ${name}. You can vote.`
+                    )
+                
+            }
+            else
+            {
+                 reject(`Oh sorry ${name}. You aren't old enough.`)
+            }
+        } , 4000)
+ })
+}
+formbutton.addEventListener("click" , (event) => {
+    event.preventDefault();
+    let nameinput = document.getElementById("name").value;
+    let ageinput = document.getElementById("age").value;
+    promiseApi1(nameinput,ageinput).then((res)=>alert(res)).catch((err)=>alert(err));
+})
