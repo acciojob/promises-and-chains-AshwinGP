@@ -3,8 +3,7 @@ var button=document.getElementById("btn");
 // var name=document.getElementById("name").value;
 // var age=document.getElemenById("age").value;
 
-function  onClick(){
-	return promise=new Promise((resolve,reject)=>{
+var onclick=new Promise((resolve,reject)=>{
 		setTimeout(()=>{
             var name=document.getElementById("name").value;
 		
@@ -17,9 +16,8 @@ function  onClick(){
 				reject(`Welcome, ${name}. You aren't old enough.`)
 			}
 		},4000)
-	})
-}
-button.addEventListener(('click',(onClick.then((res))=>{
+	});
+button.addEventListener('click',onClick.then((res)=>{
 	alert(res);
 }).catch((res)=>{
   alert(res);
